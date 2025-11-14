@@ -70,6 +70,7 @@ public class LivroController {
     public String update(@PathVariable long id, Model ui) {
         ui.addAttribute("livro", livroRepo.findById(id).get());
         ui.addAttribute("generos", generoRepo.findAll());
+        ui.addAttribute("autores", autorRepo.findAll());
         return "/livros/update";
     }
 
